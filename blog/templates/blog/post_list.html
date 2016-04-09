@@ -8,15 +8,12 @@
   <div>
     <h1><a href="http://djangogirls.org">Django Girls Blog</a></h1>
   </div>
-  <div>
-    <p>published:09.04.2016, 3:30</p>
-    <h2><a href="">My first post</a></h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, odio dolores placeat sunt quia vero perspiciatis reprehenderit deleniti commodi, totam aliquid eveniet quaerat ullam ipsa! Asperiores, aliquam provident odit reiciendis.</p>
-  </div>
-  <div>
-    <p>published:09.04.2016, 3:30</p>
-    <h2><a href="">My second post</a></h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, odio dolores placeat sunt quia vero perspiciatis reprehenderit deleniti commodi, totam aliquid eveniet quaerat ullam ipsa! Asperiores, aliquam provident odit reiciendis.</p>
-  </div>
+  {% for post in posts %}
+    <div>
+      <p>published: {{post.published_date}}</p>
+      <h1><a href="">{{post.title}}</a></h1>
+      <p>{{post.text|linebreaks}}</p>
+    </div>
+  {% endfor %}
 </body>
 </html>
